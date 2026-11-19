@@ -1,25 +1,38 @@
+"""Mostrar generos que tenemos"""
+def mostrar_generos(generos, titulo):
+    print("\n--- " + titulo + " ---")
+    if len(generos) == 0:
+        print("No hay géneros en este conjunto.")
+    else:
+        for genero in generos:
+            print("- " + genero)
 
-generos_juegos = {}
+"""Agregar más generos a los propios"""
+def agregar_genero(generos, nuevo_genero):
+    genero_limpio = nuevo_genero.strip().capitalize()
+    if genero_limpio != "":
+        generos.add(genero_limpio)
 
-def mostrarGeneros(generos_juegos):
-    return print(generos_juegos)
+"""Eliminar generos de la lista"""
+def eliminar_genero(generos, genero_objetivo):
+    genero_limpio = genero_objetivo.strip().capitalize()
+    if genero_limpio in generos:
+        generos.remove(genero_limpio)
+        return True
+    else:
+        return False
 
-def añadirGenero(generos_juegos):
-    generos_juegos.add(input("Genero a añadir"))
+"""Comprobar si un genero solicitado existe en el nuestro"""
+def comprobar_genero(generos, genero_buscado):
+    genero_limpio = genero_buscado.strip().capitalize()
+    if genero_limpio in generos:
+        return True
+    else:
+        return False
 
-    return generos_juegos
-
-def eliminarGenero(generos_juegos):
-    try:
-        
-        print(generos_juegos),
-        eliminar = input("Genero a eliminar")
-        generos_juegos.discard(eliminar)
-    except ValueError:
-        print(f"Error con el nombre seleccionado {eliminar}")
-    except Exception as e:
-        print(f"Ha ocurrido un error {e}")
-
-    return generos_juegos
-
-
+"""Union, interseccion y diferencia entre nuestro conjunto y otro externo"""
+def obtener_operaciones(conjunto1, conjunto2):
+    union = conjunto1.union(conjunto2)
+    interseccion = conjunto1.intersection(conjunto2)
+    diferencia = conjunto1.difference(conjunto2)
+    return union, interseccion, diferencia
