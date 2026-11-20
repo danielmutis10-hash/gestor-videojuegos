@@ -38,13 +38,14 @@ def pedir_anio(mensaje):
 #FUNCIONES PARA GESTONIAR VIDEOJUEGOS INEXISTENTES, BUSQUEDAS SIN RESULTADOS Y ENTRADAS INCORRECTAS
 #Si no se encuentan videojuegos con ese titulo
 def opcion_buscar_exacta(catalogo):
-titulo = input("Introduce el título del videojuego: ")
-juego = obtener_videojuego(catalogo, titulo)
+    titulo = input("Introduce el título del videojuego: ")
+    juego = obtener_videojuego(catalogo, titulo)
 
-if juego is None:
-    print("No se ha encontrado el videojuego.")
-else:
-    mostrar_videojuego(juego)
+    if juego is None:
+        print("No se ha encontrado el videojuego.")
+    else:
+        mostrar_videojuego(juego)
+        
 #Si no se encuentan videojuegos con ese titulo
 def opcion_buscar_parcial(catalogo):
     texto = input("Introduce el título exacto o parcial: ")
