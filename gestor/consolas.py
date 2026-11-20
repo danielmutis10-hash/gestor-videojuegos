@@ -45,7 +45,7 @@ def opcion_buscar_exacta(catalogo):
         print("No se ha encontrado el videojuego.")
     else:
         mostrar_videojuego(juego)
-        
+
 #Si no se encuentan videojuegos con ese titulo
 def opcion_buscar_parcial(catalogo):
     texto = input("Introduce el título exacto o parcial: ")
@@ -174,7 +174,6 @@ def mostrar_menu(catalogo):
 
         elif opcion == "0":
             print("Se ha termina el programa")
-            break
 
         else:
             print("Opción no válida")
